@@ -20,8 +20,9 @@ def mark(img, nbs): # mark the array use (0, 1, 2)
         s = 0
         for dp in nbs:
             if img[p+dp]!=0:s+=1
-        if s>=3:img[p]=2
-        else:img[p]=1
+        if s==2:img[p]=1
+        else:img[p]=2
+        print(s)
 
 @jit(nopython=True) # trans index to r, c...
 def idx2rc(idx, acc):
